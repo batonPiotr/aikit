@@ -1,0 +1,22 @@
+{
+    "name": "com.handcraftedgames.aikit",
+    "version": "0.0.1",
+    "displayName": "AIKit",
+    "description": "A framework for complex AI.",
+    "unity": "2018.4",
+    "keywords": [
+        "HandcraftedGames",
+        "AIKit",
+        "AI"
+    ],
+    "author": {
+        "name": "Pawel Sulik",
+        "email": "pawel.sulik@handcrafted.games",
+        "url": "https://handcrafted.games"
+    },
+    "dependencies": {
+        "com.unity.test-framework.performance": "2.6.0-preview",
+        "com.unity.cinemachine": "2.6.9",
+        "com.handcraftedgames.agentcontroller": "https://github.com/batonPiotr/agent-controller.git#feature/toon_units_sample"
+    }
+}
