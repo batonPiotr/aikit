@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace HandcraftedGames.AIKit.TaskQueue
 {
-    public class TaskQueue : ITaskQueue
+    public class DefaultTaskQueue : ITaskQueue
     {
         bool _isRunning = false;
         public bool IsRunning => _isRunning;
@@ -10,8 +10,21 @@ namespace HandcraftedGames.AIKit.TaskQueue
         private ITask currentTask = null;
         public ITask Remove(ITask task)
         {
+            if(task == null)
+                return null;
+
+
+            if(task == currentTask)
+            {
+                task.Stop();
+                currentTask = null;
+                Update();
+                return task;
+            }
+
             if(tasks.Remove(task))
                 return task;
+
             return null;
         }
 
@@ -23,6 +36,9 @@ namespace HandcraftedGames.AIKit.TaskQueue
 
         public void Start()
         {
+            if(_isRunning)
+                return;
+            _isRunning = true;
             if(currentTask != null)
                 currentTask.Start();
             else
@@ -68,8 +84,8 @@ namespace HandcraftedGames.AIKit.TaskQueue
                 return;
             }
 
-            currentTask = null;
             currentTask.OnDidComplete -= OnTaskComplete;
+            currentTask = null;
             Update();
         }
     }

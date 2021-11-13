@@ -1,6 +1,6 @@
 namespace HandcraftedGames.AIKit.TaskQueue
 {
-    interface ITaskQueue
+    public interface ITaskQueue
     {
         bool IsRunning { get; }
         void Enqueue(ITask task);
