@@ -17,6 +17,6 @@
     "dependencies": {
         "com.unity.test-framework.performance": "2.6.0-preview",
         "com.unity.cinemachine": "2.6.9",
-        "com.handcraftedgames.agentcontroller": "https://github.com/batonPiotr/agent-controller.git#feature/toon_units_sample"
+        "com.handcraftedgames.agentcontroller": "https://github.com/batonPiotr/agent-controller.git#0.1.0"
     }
 }
