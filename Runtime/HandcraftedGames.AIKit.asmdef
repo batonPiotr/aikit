@@ -1,7 +1,10 @@
 {
     "name": "HandcraftedGames.AIKit",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "HandcraftedGames.AgentController",
+        "HandcraftedGames.Common"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

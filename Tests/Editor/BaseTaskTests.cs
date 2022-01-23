@@ -16,13 +16,13 @@ namespace HandcraftedGames.AIKit.Tests
             var task = new MockedTask();
             Assert.AreEqual(TaskState.Idle, task.State);
 
-            task.Stop();
+            Assert.Throws<System.InvalidOperationException>(() => task.Cancel());
             Assert.AreEqual(TaskState.Idle, task.State);
 
-            task.SetAsCompleted();
+            Assert.Throws<System.InvalidOperationException>(() => task.SetAsCompleted());
             Assert.AreEqual(TaskState.Idle, task.State);
 
-            task.SetAsFailed();
+            Assert.Throws<System.InvalidOperationException>(() => task.SetAsFailed());
             Assert.AreEqual(TaskState.Idle, task.State);
 
 
@@ -32,12 +32,12 @@ namespace HandcraftedGames.AIKit.Tests
             task.SetAsFailed();
             Assert.AreEqual(TaskState.Failed, task.State);
 
-            task.Start();
+            Assert.Throws<System.InvalidOperationException>(() => task.Start());
             Assert.AreEqual(TaskState.Failed, task.State);
 
             var secondTask = new MockedTask();
             secondTask.Start();
-            secondTask.Stop();
+            secondTask.Cancel();
             Assert.AreEqual(TaskState.Idle, secondTask.State);
 
             secondTask.Start();

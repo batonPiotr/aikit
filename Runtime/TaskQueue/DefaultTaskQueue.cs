@@ -16,7 +16,10 @@ namespace HandcraftedGames.AIKit.TaskQueue
 
             if(task == currentTask)
             {
-                task.Stop();
+                if(task.State == TaskState.Running)
+                    task.Cancel();
+                else
+                    UnityEngine.Debug.LogWarning("Task was current but not running?!?! " + task.State);
                 currentTask = null;
                 Update();
                 return task;
@@ -47,8 +50,13 @@ namespace HandcraftedGames.AIKit.TaskQueue
 
         public void Stop()
         {
+            if(!_isRunning)
+                return;
             if(currentTask != null)
-                currentTask.Stop();
+            {
+                currentTask.Cancel();
+                currentTask = null;
+            }
             _isRunning = false;
         }
 
