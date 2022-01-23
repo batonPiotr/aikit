@@ -1,8 +1,8 @@
 {
     "name": "com.handcraftedgames.aikit",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "displayName": "AIKit",
-    "description": "A framework for complex AI.",
+    "description": "A framework for AI.",
     "unity": "2018.4",
     "keywords": [
         "HandcraftedGames",
@@ -17,6 +17,7 @@
     "dependencies": {
         "com.unity.test-framework.performance": "2.6.0-preview",
         "com.unity.cinemachine": "2.6.9",
-        "com.handcraftedgames.agentcontroller": "https://github.com/batonPiotr/agent-controller.git#feature/toon_units_sample"
+        "com.handcraftedgames.agentcontroller": "https://github.com/batonPiotr/agent-controller.git#0.3.0",
+        "com.handcraftedgames.common": "https://github.com/batonPiotr/handcrafted-games-common.git#0.0.1"
     }
 }
